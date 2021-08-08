@@ -1,12 +1,24 @@
 { inputs }:
 final: prev: {
+  wowtricks = prev.winetricks.override { wine = final.wine-tkg; };
+
   osu-stable = prev.callPackage ./osu-stable {
     wine = final.wine-tkg;
-    winetricks = prev.winetricks.override { wine = final.wine-tkg; };
+    winetricks = final.wowtricks;
     inherit (final) winestreamproxy;
   };
 
-  winestreamproxy = prev.callPackage ./winestreamproxy { wine = final.wine-tkg; };
+  rocket-league = prev.callPackage ./rocket-league {
+    wine = final.wine-tkg;
+    winetricks = final.wowtricks;
+  };
+
+  technic-launcher = prev.callPackage ./technic-launcher { };
+
+  winestreamproxy = prev.callPackage ./winestreamproxy {
+    wine = final.wine-tkg;
+    inherit (inputs) wsp;
+  };
 
   wine-tkg = prev.callPackage ./wine-tkg {
     wine =

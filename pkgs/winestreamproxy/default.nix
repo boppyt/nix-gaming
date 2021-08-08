@@ -1,20 +1,17 @@
 { stdenv
 , lib
 , fetchFromGitHub
+, gcc
 , pkg-config
 , wine
+, wsp
 }:
 
 stdenv.mkDerivation rec {
   pname = "winestreamproxy";
-  version = "unstable-2020-10-17";
+  version = "2.0.1";
 
-  src = fetchFromGitHub {
-    owner = "openglfreak";
-    repo = pname;
-    rev = "075622872bbff0621791296137edb616af680297";
-    sha256 = "sha256-I579RJ9iBREYnqEiEgFXWbPSatbVv0cjMHloK2l5D6Q=";
-  };
+  src = wsp;
 
   nativeBuildInputs = [ pkg-config wine ];
 
@@ -23,6 +20,7 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Program for Wine that forwards messages between a named pipe client and a unix socket server";
     homepage = "https://github.com/openglfreak/winestreamproxy";
+    license = lib.licenses.mpl20;
     maintainers = with lib.maintainers; [ fufexan ];
     platforms = with lib.platforms; [ "i686-linux" "x86_64-linux" ];
   };

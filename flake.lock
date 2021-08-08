@@ -52,7 +52,8 @@
         "nixpkgs": "nixpkgs",
         "oglfPatches": "oglfPatches",
         "tkgPatches": "tkgPatches",
-        "utils": "utils"
+        "utils": "utils",
+        "wsp": "wsp"
       }
     },
     "tkgPatches": {
@@ -88,6 +89,22 @@
         "owner": "gytis-ivaskevicius",
         "ref": "staging",
         "repo": "flake-utils-plus",
+        "type": "github"
+      }
+    },
+    "wsp": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1627832176,
+        "narHash": "sha256-KaI8sXAoeNqxueJ8BTvt4qZmxUOFwBVkevV0nqHOAsQ=",
+        "owner": "openglfreak",
+        "repo": "winestreamproxy",
+        "rev": "d0a8fa3867b6bc481ebc5840712cebb9d442c6a8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "openglfreak",
+        "repo": "winestreamproxy",
         "type": "github"
       }
     }

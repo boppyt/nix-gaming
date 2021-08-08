@@ -5,6 +5,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs";
     utils.url = "github:gytis-ivaskevicius/flake-utils-plus/staging";
 
+    wsp = { url = "github:openglfreak/winestreamproxy"; flake = false; };
+
     oglfPatches = { url = "github:openglfreak/wine-tkg-userpatches/ff6328a6b5e36dd8a007a7273290aa30ab3164d9"; flake = false; };
     tkgPatches = { url = "github:Frogging-Family/wine-tkg-git/257bfe71c045db0fbbb9f3896f9697068b9f482a"; flake = false; };
   };
