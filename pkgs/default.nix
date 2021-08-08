@@ -16,7 +16,7 @@ final: prev: {
   technic-launcher = prev.callPackage ./technic-launcher { };
 
   winestreamproxy = prev.callPackage ./winestreamproxy {
-    wine = final.wine-tkg;
+    wine = final.wineWowPackages.unstable;
     inherit (inputs) wsp;
   };
 
