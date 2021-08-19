@@ -34,6 +34,7 @@ let
 
   script = writeShellScriptBin pname ''
     export WINEARCH="win32"
+    export STAGING_RT_PRIORITY_SERVER=1
     export WINEPREFIX="${location}"
     # disables vsync for OpenGL
     export vblank_mode=0
